@@ -8,3 +8,9 @@
 ## Details
 
 - puzzle board setup: `docs/puzzleboard.md`
+
+## Architecture
+
+- Use components
+- Seperate file for styling
+- Seperate file for script
