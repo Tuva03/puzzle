@@ -27,7 +27,6 @@ h1 { font-size: 1.25rem; margin: 0; letter-spacing: .02em; }
 #status { font-size: .9rem; opacity: .75; min-width: 160px; text-align: center; }
 
 /* Board + pieces */
-#boardWrap { position: relative; }
 #board {
   position: relative; overflow: hidden;
   background: #d8d6cd;
@@ -50,9 +49,9 @@ h1 { font-size: 1.25rem; margin: 0; letter-spacing: .02em; }
 }
 
 #win {
-  position: absolute; inset: 0; display: none;
-  align-items: center; justify-content: center; flex-direction: column; gap: 6px;
-  background: rgba(255,255,255,.92); border-radius: 4px; text-align: center;
+  display: none;
+  flex-direction: column; align-items: center; gap: 4px;
+  text-align: center;
 }
 #win.show { display: flex; }
 #win strong { font-size: 1.3rem; }

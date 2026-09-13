@@ -1,37 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Picture Puzzle</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>Picture Puzzle</h1>
-  <div id="controls">
-    <button class="file-btn" id="pickBtn">Upload Photo</button>
-    <input type="file" id="fileInput" accept="image/*">
-    <select id="gridSize">
-      <option value="3">3 × 3</option>
-      <option value="4" selected>4 × 4</option>
-      <option value="5">5 × 5</option>
-      <option value="6">6 × 6</option>
-    </select>
-    <button id="shuffleBtn" disabled>Shuffle</button>
-    <span id="status"></span>
-  </div>
-  <div id="boardWrap">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Picture Puzzle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Picture Puzzle</h1>
+    <div id="controls">
+      <button class="file-btn" id="pickBtn">Upload Photo</button>
+      <input type="file" id="fileInput" accept="image/*" />
+      <select id="gridSize">
+        <option value="3">3 × 3</option>
+        <option value="4" selected>4 × 4</option>
+        <option value="5">5 × 5</option>
+        <option value="6">6 × 6</option>
+      </select>
+      <button id="shuffleBtn" disabled>Shuffle</button>
+      <span id="status"></span>
+    </div>
     <div id="board"></div>
-    <div id="win"><strong>Solved! 🎉</strong><span id="winStats"></span></div>
-  </div>
+    <div id="win"><strong>Solved! </strong><span id="winStats"></span></div>
 
-  <div id="tray">
-    <div id="empty-hint">Upload a photo to start the puzzle</div>
-  </div>
+    <div id="tray">
+      <div id="empty-hint">Upload a photo to start the puzzle</div>
+    </div>
 
-<script src="js/layout.js"></script>
-<script src="js/jigsaw.js"></script>
-<script src="js/puzzleBoard.js"></script>
-<script src="js/main.js"></script>
-</body>
+    <script src="js/layout.js"></script>
+    <script src="js/jigsaw.js"></script>
+    <script src="js/puzzleBoard.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
