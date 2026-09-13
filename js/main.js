@@ -12,13 +12,12 @@ const puzzle = new PuzzleBoard({
   winEl: document.getElementById('win'),
   winStatsEl: document.getElementById('winStats'),
   statusEl: document.getElementById('status'),
-  dupWarningEl: document.getElementById('dupWarning'),
 });
 
-let currentPhoto = null; // { imgData, srcCanvas } of the last uploaded photo
+let currentImgData = null; // data URL of the last uploaded (cropped) photo
 
 function startWithGridSize() {
-  puzzle.start({ ...currentPhoto, gridSize: parseInt(gridSizeSel.value, 10) });
+  puzzle.start({ imgData: currentImgData, gridSize: parseInt(gridSizeSel.value, 10) });
 }
 
 // Crops the uploaded photo to a centered square at the board's pixel size.
@@ -34,7 +33,7 @@ function loadPhoto(file) {
         const c = document.createElement('canvas');
         c.width = c.height = boardPx;
         c.getContext('2d').drawImage(img, sx, sy, s, s, 0, 0, boardPx, boardPx);
-        resolve({ imgData: c.toDataURL(), srcCanvas: c });
+        resolve(c.toDataURL());
       };
       img.src = e.target.result;
     };
@@ -46,9 +45,9 @@ pickBtn.onclick = () => fileInput.click();
 fileInput.onchange = async () => {
   const file = fileInput.files[0];
   if (!file) return;
-  currentPhoto = await loadPhoto(file);
+  currentImgData = await loadPhoto(file);
   shuffleBtn.disabled = false;
   startWithGridSize();
 };
-gridSizeSel.onchange = () => { if (currentPhoto) startWithGridSize(); };
-shuffleBtn.onclick = () => { if (currentPhoto) startWithGridSize(); };
+gridSizeSel.onchange = () => { if (currentImgData) startWithGridSize(); };
+shuffleBtn.onclick = () => { if (currentImgData) startWithGridSize(); };

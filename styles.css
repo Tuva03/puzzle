@@ -26,9 +26,6 @@ h1 { font-size: 1.25rem; margin: 0; letter-spacing: .02em; }
 #fileInput { display: none; }
 #status { font-size: .9rem; opacity: .75; min-width: 160px; text-align: center; }
 
-#dupWarning { display: none; font-size: .85rem; color: #8a5a00; background: #fdf0d5; border: 1px solid #e8c887; padding: 6px 12px; border-radius: 6px; }
-#dupWarning.show { display: block; }
-
 /* Board + pieces */
 #boardWrap { position: relative; }
 #board {
@@ -45,8 +42,12 @@ h1 { font-size: 1.25rem; margin: 0; letter-spacing: .02em; }
   cursor: grab;
   background-repeat: no-repeat;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,.4));
+  touch-action: none;
 }
-.piece:active { cursor: grabbing; }
+.piece.dragging {
+  cursor: grabbing;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.45));
+}
 
 #win {
   position: absolute; inset: 0; display: none;
